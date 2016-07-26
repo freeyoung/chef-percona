@@ -47,7 +47,7 @@ module Percona
       if node["cloud"] && node["cloud"]["public_ipv4"]
         node["cloud"]["public_ipv4"]
       else
-        find_ip(node, :private)
+        find_ip(node, :public)
       end
     end
 
