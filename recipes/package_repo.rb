@@ -19,7 +19,7 @@ when "debian"
   apt_repository "percona" do
     uri node["percona"]["apt"]["uri"]
     distribution node["lsb"]["codename"]
-    components ["main"]
+    components node['percona']['apt']['components']
     keyserver node["percona"]["apt"]["keyserver"]
     key node["percona"]["apt"]["key"]
     not_if "apt-key list | grep #{node['percona']['apt']['key'][-8,8]}"
